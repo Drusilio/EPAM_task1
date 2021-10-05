@@ -1,10 +1,12 @@
 package entity;
 
+import entity.impl.FinalArrayInterface;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class FinalArray {
+public class FinalArray implements FinalArrayInterface {
         private int[] array;
 
         public FinalArray() {

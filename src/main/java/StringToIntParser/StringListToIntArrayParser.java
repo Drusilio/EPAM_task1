@@ -1,6 +1,7 @@
 package StringToIntParser;
 
 import ArrayLogger.ArrayLogger;
+import StringToIntParser.impl.StringListToIntArrayParserInterface;
 import exception.IntFormatException;
 import validator.IntValidator;
 
@@ -8,7 +9,7 @@ import java.util.List;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-public class StringListToIntArrayParser {
+public class StringListToIntArrayParser implements StringListToIntArrayParserInterface {
     static Logger logger = LogManager.getLogger();
 
     public static int[] stringListToIntArrayParser(List<String> list) throws IntFormatException {
