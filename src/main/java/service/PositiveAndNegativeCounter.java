@@ -3,7 +3,7 @@ package service;
 import service.inteface.PositiveAndNegativeCounterInterface;
 
 public class PositiveAndNegativeCounter implements PositiveAndNegativeCounterInterface {
-    public static int positiveCounter(int[] array) {
+    public int positiveCounter(int[] array) {
         int negCount = 0;
         for (int number : array) {
             if (number > 0) {
@@ -13,7 +13,7 @@ public class PositiveAndNegativeCounter implements PositiveAndNegativeCounterInt
         return negCount;
     }
 
-    public static int negativeCounter(int[] array) {
+    public int negativeCounter(int[] array) {
         int posCount = 0;
         for (int number : array) {
             if (number < 0) {
