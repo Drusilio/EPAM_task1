@@ -1,8 +1,8 @@
-package FinalArrayCreator;
+package creator;
 
-import ArrayReader.ArrayReader;
-import FinalArrayCreator.impl.FinalArrayCreatorInterface;
-import StringToIntParser.StringListToIntArrayParser;
+import reader.ArrayReader;
+import creator.impl.FinalArrayCreatorInterface;
+import parser.StringListToIntArrayParser;
 import entity.FinalArray;
 import exception.IntFormatException;
 

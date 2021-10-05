@@ -1,6 +1,6 @@
-package ArrayReader;
+package reader;
 
-import ArrayReader.impl.ArrayReaderInterface;
+import reader.impl.ArrayReaderInterface;
 
 import java.io.*;
 import java.util.List;

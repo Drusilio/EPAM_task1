@@ -1,7 +1,7 @@
-package StringToIntParser;
+package parser;
 
-import ArrayLogger.ArrayLogger;
-import StringToIntParser.impl.StringListToIntArrayParserInterface;
+import logger.ArrayLogger;
+import parser.impl.StringListToIntArrayParserInterface;
 import exception.IntFormatException;
 import validator.IntValidator;
 

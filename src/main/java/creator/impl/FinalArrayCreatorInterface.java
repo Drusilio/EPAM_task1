@@ -1,11 +1,7 @@
-package FinalArrayCreator.impl;
+package creator.impl;
 
-import ArrayReader.ArrayReader;
-import StringToIntParser.StringListToIntArrayParser;
 import entity.FinalArray;
 import exception.IntFormatException;
-
-import java.util.List;
 
 public interface FinalArrayCreatorInterface {
 

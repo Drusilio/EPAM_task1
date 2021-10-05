@@ -1,8 +1,6 @@
-package StringToIntParser.impl;
+package parser.impl;
 
-import ArrayLogger.ArrayLogger;
 import exception.IntFormatException;
-import validator.IntValidator;
 
 import java.util.List;
 

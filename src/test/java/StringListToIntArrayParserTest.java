@@ -1,5 +1,4 @@
-import ArrayReader.ArrayReader;
-import StringToIntParser.StringListToIntArrayParser;
+import reader.ArrayReader;
 import exception.IntFormatException;
 import org.junit.Test;
 import org.junit.Assert;

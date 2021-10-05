@@ -1,4 +1,4 @@
-package ArrayReader.impl;
+package reader.impl;
 
 import java.util.List;
 
