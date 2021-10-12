@@ -1,4 +1,4 @@
-package creator.impl;
+package creator;
 
 import entity.FinalArray;
 import exception.IntFormatException;
