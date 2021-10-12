@@ -1,62 +1,42 @@
 package validator;
 
-import exception.IntFormatException;
-
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringValidator {
-    private static final StringValidator instance = new StringValidator();
+    //                                                                    - минус
+    //                                                                    ?	один или отсутствует (относится к минусу)
     //                                                                    \d	цифровой символ
-    //                                                                    ?	один или отсутствует
     //                                                                    {n}	n раз
-    //
-    private static final String STRING_AS_INT_OVERFLOW_CANDIDATE_REGEX = "-?\\d{10}";
-    private static final String MAX_INT_VALUE = String.valueOf(Integer.MAX_VALUE);
-    private static final String MIN_INT_VALUE = String.valueOf(Integer.MIN_VALUE);
+    //                                                                    то есть ниже ищем до 10-ти цифровых символов подряд с/без знака минус перед ним
+    private static final String STRING_TO_INT_LINE_REGEX = "(-?\\d{1,10};)+";
+    private static final String STRING_TO_INT_REGEX = "-?\\d{10}";
+    private static final String MAX_INT_VALUE = "-2147483648";
+    private static final String MIN_INT_VALUE = "2147483647";
 
-    private StringValidator() {
-    }
-
-    public static StringValidator getInstance() {
-        return instance;
-    }
-
-       public boolean validate(String stringAsIntArray) {
-
-        Pattern pattern = Pattern.compile(STRING_AS_INT_ARRAY_REGEX);
-        Matcher matcher = pattern.matcher(stringAsIntArray);
+    public static boolean validate(String arrayLine) {
+        Pattern pattern = Pattern.compile(STRING_TO_INT_LINE_REGEX);
+        Matcher matcher = pattern.matcher(arrayLine);
 
         boolean isValid;
-        isValid = matcher.matches();
-
-        if (isValid) {
-            isValid = additionalValidateToIntOverflow(stringAsIntArray);
+        if (isValid = matcher.matches()) {
+            isValid = intDiapasonValidation(arrayLine);
         }
-
         return isValid;
     }
 
-    //	cheсk only the substring which containes an int overflow candidate
-    //	3000000000 - will check
-    //	-300000000 - will not check
-    private boolean additionalValidateToIntOverflow(String stringAsIntArray) {
-
+    private static boolean intDiapasonValidation(String stringNumber) {
         boolean isValid = true;
-
-        Pattern pattern = Pattern.compile(STRING_AS_INT_OVERFLOW_CANDIDATE_REGEX);
-        Matcher matcher = pattern.matcher(stringAsIntArray);
+        Pattern pattern = Pattern.compile(STRING_TO_INT_REGEX);
+        Matcher matcher = pattern.matcher(stringNumber);
 
         while (matcher.find()) {
-            String candidate = matcher.group();
-
-            if (candidate.compareTo(MAX_INT_AS_STRING) > 0 || candidate.compareTo(MIN_INT_AS_STRING) > 0) {
+            String currentStr = matcher.group();
+            if (currentStr.compareTo(MAX_INT_VALUE) > 0 || currentStr.compareTo(MIN_INT_VALUE) > 0) {
                 isValid = false;
                 break;
             }
         }
-
         return isValid;
     }
 

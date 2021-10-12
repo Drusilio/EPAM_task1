@@ -1,11 +1,9 @@
 package parser;
 
-import exception.IntFormatException;
+import exception.UserException;
 
 import java.util.List;
 
 public interface StringListToIntArrayParserInterface {
-    public static int[] stringListToIntArrayParser(List<String> list) throws IntFormatException {
-       return null;
-    }
+    public int[] parse(String line);
 }

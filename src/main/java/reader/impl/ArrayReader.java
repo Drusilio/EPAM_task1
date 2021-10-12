@@ -1,43 +1,38 @@
 package reader.impl;
 
+import exception.UserException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import reader.ArrayReaderInterface;
+import validator.StringValidator;
+
+import java.io.*;
 
 public class ArrayReader implements ArrayReaderInterface {
-    private final static String PATH = "C:\\Users\\Админ\\IdeaProjects\\EPAM_task1\\src\\main\\resources\\file.txt";
     Logger logger = LogManager.getLogger();
+
     @Override
-    public String read(String path) {
+    public String read(String path) throws UserException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
+            String currentLine = reader.readLine();
+            boolean isLineValid = false;
+            while (!isLineValid && (currentLine = reader.readLine()) != null) {
+                isLineValid = StringValidator.validate(currentLine);
+            }
 
+            if (currentLine == null) {
+                logger.error("File path " + path + " containe not int-type data");
+                throw new UserException("File path" + path + " containe not int-type data");
+            }
+            return currentLine;
 
-        return null;
+        } catch (FileNotFoundException e) {
+            logger.error("File on file path " + path + " not found", e);
+            throw new UserException("File on file path " + path + " not found", e);
+        } catch (IOException e) {
+            logger.error("Input/Output operation is fail or interrupted while working with the file on file path " + path + ".", e);
+            throw new UserException(
+                    "Input/Output operation is fail or interrupted while working with the file on file path " + path + ".", e);
+        }
     }
-
-
-//    private static List<String> list;
-//
-//    public static List<String> getList() {
-//        return list;
-//    }
-//
-//    {
-//        File file = new File(path);
-//        FileReader fileReader = null;
-//        try {
-//            fileReader = new FileReader(file);
-//            BufferedReader reader = new BufferedReader(fileReader);
-//            String line = reader.readLine();
-//            while (line != null) {
-//                list.add(line);
-//                line = reader.readLine();
-//            }
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        catch (IOException e){
-//            e.printStackTrace();
-//        }
-//    }
-
 }

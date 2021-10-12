@@ -1,25 +1,27 @@
 package entity;
 
-import entity.impl.FinalArrayInterface;
+import java.util.Arrays;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+public class FinalArray {
+    private int[] array;
 
-public class FinalArray implements FinalArrayInterface {
-        private int[] array;
+    public FinalArray() {
+    }
 
-        public FinalArray() {
-        }
-        public FinalArray(int[] array) {
-            this.array = array;
-        }
+    public FinalArray(int[] array) {
+        this.array = array;
+    }
 
     public int[] getArray() {
-        return this.array;
+        return  Arrays.copyOf(this.array, array.length);
     }
 
     public void setArray(int[] array) {
-        this.array = array;
+        this.array =  Arrays.copyOf(array, array.length);
+    }
+
+    @Override
+    public String toString() {
+        return "FinalArray [array:" + array + "]";
     }
 }

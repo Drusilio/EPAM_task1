@@ -1,5 +1,5 @@
 import reader.impl.ArrayReader;
-import exception.IntFormatException;
+import exception.UserException;
 import org.junit.Test;
 import org.junit.Assert;
 import validator.StringValidator;
@@ -9,7 +9,7 @@ public class StringListToIntArrayParserTest {
     public void isValuesInt() {
         try {
             Assert.assertTrue(StringValidator.isValid(ArrayReader.getList()));
-        } catch (IntFormatException e) {
+        } catch (UserException e) {
             e.printStackTrace();
         }
     }
