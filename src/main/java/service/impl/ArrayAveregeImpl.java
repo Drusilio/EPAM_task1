@@ -1,8 +1,10 @@
 package service.impl;
 
-import service.ArrayAveregeInterface;
+import service.ArrayAverege;
 
-public class ArrayAverege implements ArrayAveregeInterface {
+public class ArrayAveregeImpl implements ArrayAverege {
+
+    @Override
     public double arrayAverage(int[] array) {
         int sum = 0;
         for (int number : array) {

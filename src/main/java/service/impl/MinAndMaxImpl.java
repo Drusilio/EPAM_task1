@@ -1,9 +1,8 @@
 package service.impl;
 
-import service.MinAndMaxInterface;
+public class MinAndMaxImpl implements service.MinAndMax {
 
-public class MinAndMax implements MinAndMaxInterface {
-
+    @Override
     public int minFromArray(int[] array) {
         int indexOfMax = 0;
 
@@ -15,6 +14,7 @@ public class MinAndMax implements MinAndMaxInterface {
         return array[indexOfMax];
     }
 
+    @Override
     public int maxFromArray(int[] array) {
         int indexOfMin = 0;
 

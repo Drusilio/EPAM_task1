@@ -1,8 +1,10 @@
 package service.impl;
 
-import service.PositiveAndNegativeCounterInterface;
+import service.PositiveAndNegativeCounter;
 
-public class PositiveAndNegativeCounter implements PositiveAndNegativeCounterInterface {
+public class PositiveAndNegativeCounterImpl implements PositiveAndNegativeCounter {
+
+    @Override
     public int positiveCounter(int[] array) {
         int negCount = 0;
         for (int number : array) {
@@ -13,6 +15,7 @@ public class PositiveAndNegativeCounter implements PositiveAndNegativeCounterInt
         return negCount;
     }
 
+    @Override
     public int negativeCounter(int[] array) {
         int posCount = 0;
         for (int number : array) {

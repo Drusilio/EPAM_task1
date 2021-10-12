@@ -1,6 +1,6 @@
 package service;
 
-public interface MinAndMaxInterface {
+public interface MinAndMax {
 
     public int minFromArray(int[] array);
     public int maxFromArray(int[] array);

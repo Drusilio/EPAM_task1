@@ -1,5 +1,5 @@
 package service;
 
-public interface ConditionChangesInterface {
+public interface ConditionChanges {
     int[] conditionChange(int[] array);
 }
