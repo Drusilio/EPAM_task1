@@ -1,6 +1,6 @@
-package service;
+package service.impl;
 
-import service.inteface.PositiveAndNegativeCounterInterface;
+import service.PositiveAndNegativeCounterInterface;
 
 public class PositiveAndNegativeCounter implements PositiveAndNegativeCounterInterface {
     public int positiveCounter(int[] array) {

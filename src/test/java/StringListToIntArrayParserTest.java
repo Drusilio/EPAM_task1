@@ -1,14 +1,14 @@
-import reader.ArrayReader;
+import reader.impl.ArrayReader;
 import exception.IntFormatException;
 import org.junit.Test;
 import org.junit.Assert;
-import validator.IntValidator;
+import validator.StringValidator;
 
 public class StringListToIntArrayParserTest {
     @Test
     public void isValuesInt() {
         try {
-            Assert.assertTrue(IntValidator.isValid(ArrayReader.getList()));
+            Assert.assertTrue(StringValidator.isValid(ArrayReader.getList()));
         } catch (IntFormatException e) {
             e.printStackTrace();
         }

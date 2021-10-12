@@ -1,4 +1,4 @@
-package service.inteface;
+package service;
 
 public interface ConditionChangesInterface {
     int[] conditionChange(int[] array);

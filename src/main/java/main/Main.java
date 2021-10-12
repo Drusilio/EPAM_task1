@@ -1,12 +1,5 @@
 package main;
 
-import java.io.IOException;
-
-import entity.FinalArray;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-import service.ArrayAverege;
-
 public class Main {
 //    static Logger logger = LogManager.getLogger();
 //    private static String errorNFEMessage =

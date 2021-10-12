@@ -1,4 +1,4 @@
-package parser.impl;
+package parser;
 
 import exception.IntFormatException;
 

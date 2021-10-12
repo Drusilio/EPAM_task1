@@ -1,4 +1,4 @@
-package service.inteface;
+package service;
 
 public interface PositiveAndNegativeCounterInterface {
     public static int positiveCounter(int[] array) {

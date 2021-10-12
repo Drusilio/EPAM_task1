@@ -1,6 +1,6 @@
-package service;
+package service.impl;
 
-import service.inteface.MinAndMaxInterface;
+import service.MinAndMaxInterface;
 
 public class MinAndMax implements MinAndMaxInterface {
 

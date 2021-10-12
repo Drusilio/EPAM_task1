@@ -1,6 +1,6 @@
-package service;
+package service.impl;
 
-import service.inteface.ArrayAveregeInterface;
+import service.ArrayAveregeInterface;
 
 public class ArrayAverege implements ArrayAveregeInterface {
     public double arrayAverage(int[] array) {

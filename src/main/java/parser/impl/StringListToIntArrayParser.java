@@ -1,9 +1,9 @@
-package parser;
+package parser.impl;
 
 import logger.ArrayLogger;
-import parser.impl.StringListToIntArrayParserInterface;
 import exception.IntFormatException;
-import validator.IntValidator;
+import parser.StringListToIntArrayParserInterface;
+import validator.StringValidator;
 
 import java.util.List;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +13,7 @@ public class StringListToIntArrayParser implements StringListToIntArrayParserInt
     static Logger logger = LogManager.getLogger();
 
     public static int[] stringListToIntArrayParser(List<String> list) throws IntFormatException {
-        if(!IntValidator.isValid(list)) {
+        if(!StringValidator.isValid(list)) {
             ArrayLogger.getArrayLogger().info(
                     "В переданном файле присутсвует как минимум один элемент, не являющийся целым числом",
                     new IntFormatException());

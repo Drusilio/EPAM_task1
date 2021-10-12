@@ -1,6 +1,6 @@
-package service;
+package service.impl;
 
-import service.inteface.ConditionChangesInterface;
+import service.ConditionChangesInterface;
 
 public class ConditionChanges implements ConditionChangesInterface {
 
