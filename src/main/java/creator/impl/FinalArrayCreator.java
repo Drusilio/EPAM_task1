@@ -4,7 +4,14 @@ import creator.FinalArrayCreatorInterface;
 import entity.FinalArray;
 
 public class FinalArrayCreator implements FinalArrayCreatorInterface {
-       public FinalArray createFinalArray(int[] array) {
+
+    @Override
+    public FinalArray createFinalArray(int[] array) {
         return new FinalArray(array);
+    }
+
+    @Override
+    public FinalArray createFinalArray() {
+        return new FinalArray();
     }
 }

@@ -9,8 +9,8 @@ public class StringValidator {
     //                                                                    \d	цифровой символ
     //                                                                    {n}	n раз
     //                                                                    то есть ниже ищем до 10-ти цифровых символов подряд с/без знака минус перед ним
-    private static final String STRING_TO_INT_LINE_REGEX = "(-?\\d{1,10};)+";
-    private static final String STRING_TO_INT_REGEX = "-?\\d{10}";
+    private static final String STRING_TO_INT_LINE_REGEX = "(-?\\d+;)+";
+    private static final String STRING_TO_INT_REGEX = "-?\\d+";
     private static final String MAX_INT_VALUE = "-2147483648";
     private static final String MIN_INT_VALUE = "2147483647";
 

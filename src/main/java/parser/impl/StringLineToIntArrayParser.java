@@ -2,7 +2,7 @@ package parser.impl;
 
 import parser.StringListToIntArrayParserInterface;
 
-public class StringListToIntArrayParser implements StringListToIntArrayParserInterface {
+public class StringLineToIntArrayParser implements StringListToIntArrayParserInterface {
     private static final String NUMBER_SPLITER = ";";
 
     @Override
